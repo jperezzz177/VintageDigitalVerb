@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Xcode user settings
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# Build products
+Builds/MacOSX/build/
+build/
+
+# JUCE generated temporary files
+JuceLibraryCode/BinaryData.cpp
+JuceLibraryCode/BinaryData.h
+
+# Plugin binaries
+*.vst3
+*.component
+*.app

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="VDV001" name="VintageDigitalVerb" projectType="audioplug"
+              version="0.1.0" bundleIdentifier="com.joseperez.vintagedigitalverb"
+              companyName="Jose Perez" companyWebsite="" companyEmail="" companyCopyright="Copyright 2026 Jose Perez"
+              pluginName="Vintage Digital Verb" pluginDesc="Vintage inspired algorithmic reverb"
+              pluginManufacturer="JP" pluginManufacturerCode="JpRv" pluginCode="VdRv"
+              pluginChannelConfigs="{2,2},{1,1}" pluginIsSynth="0" pluginWantsMidiIn="0"
+              pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
+              pluginAUExportPrefix="VintageDigitalVerbAU" pluginAUMainType="'aufx'"
+              pluginVST3Category="Fx|Reverb" pluginFormats="buildAU,buildVST3,buildStandalone"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="mainGroup" name="VintageDigitalVerb">
+    <GROUP id="srcGroup" name="Source">
+      <FILE id="processorH" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="processorCpp" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="editorH" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="editorCpp" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <GROUP id="dspGroup" name="DSP">
+        <FILE id="dspH" name="VintageReverb.h" compile="0" resource="0" file="Source/DSP/VintageReverb.h"/>
+        <FILE id="dspCpp" name="VintageReverb.cpp" compile="1" resource="0"
+              file="Source/DSP/VintageReverb.cpp"/>
+      </GROUP>
+      <GROUP id="guiGroup" name="GUI">
+        <FILE id="guiH" name="VintageLookAndFeel.h" compile="0" resource="0"
+              file="Source/GUI/VintageLookAndFeel.h"/>
+        <FILE id="guiCpp" name="VintageLookAndFeel.cpp" compile="1" resource="0"
+              file="Source/GUI/VintageLookAndFeel.cpp"/>
+      </GROUP>
+      <GROUP id="paramGroup" name="Parameters">
+        <FILE id="paramH" name="ParameterIDs.h" compile="0" resource="0" file="Source/Parameters/ParameterIDs.h"/>
+        <FILE id="paramCpp" name="ParameterLayout.cpp" compile="1" resource="0"
+              file="Source/Parameters/ParameterLayout.cpp"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraDefs="JUCE_SILENCE_XCODE_15_LINKER_WARNING=1&#10;JUCE_VST3_CAN_REPLACE_VST2=0"
+               extraLinkerFlags="-Wl,-weak_reference_mismatches,weak">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" targetName="VintageDigitalVerb" recommendedWarnings="LLVM"
+                       enablePluginBinaryCopyStep="1"/>
+        <CONFIGURATION name="Release" isDebug="0" targetName="VintageDigitalVerb" recommendedWarnings="LLVM"
+                       optimisation="2" enablePluginBinaryCopyStep="1"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="Vendor/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors_headless" path="Vendor/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors_headless" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
